@@ -1,0 +1,39 @@
+<h1>Employee Component</h1>
+{{divVisible}} Name: {{name}}
+
+<input type="text" [value]="name" name="empname">
+<!-- <div [hidden]="divVisible" [innerText]="name">
+
+</div> -->
+
+<div *ngIf="divVisible" [innerText]="name">
+
+</div>
+
+
+<button type="button" (click)="toggle()">Toggle</button>
+
+{{employeeList | json }}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        ID
+      </th>
+      <th>
+        NAME
+      </th>
+      <th>
+        AGE
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employeeList">
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.age}}</td>
+    </tr>
+  </tbody>
+</table>

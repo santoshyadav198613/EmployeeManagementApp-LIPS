@@ -1,0 +1,17 @@
+1.  How to create a component
+run "ng g c <component_name>"
+2. place the html tag for component
+
+Binding:
+1. Interpolation: 
+We can use "{{var_name}}" to bind the data.
+2. Property Binding:
+we can use "[]" box syntax. 
+3. Event Binding:
+We will use "()" banana syntax.
+
+Built-in Directives:
+1. ngIf - It removes the element from DOM.
+2. ngFor
+3. ngSwitch
+4. ngClass
