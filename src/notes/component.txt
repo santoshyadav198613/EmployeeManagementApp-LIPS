@@ -12,6 +12,12 @@ We will use "()" banana syntax.
 
 Built-in Directives:
 1. ngIf - It removes the element from DOM.
-2. ngFor
-3. ngSwitch
-4. ngClass
+2. ngFor - To bind an array.
+3. ngSwitch - Similar to switch case statement.
+4. ngClass - 
+
+
+3 Types of Directives:
+1. component
+2. Attribute based directive : Will add some extra functionality to our tag.
+3. Structured Directive: Which will modify the actual DOM.

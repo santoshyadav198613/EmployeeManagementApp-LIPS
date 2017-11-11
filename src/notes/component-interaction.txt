@@ -1,0 +1,11 @@
+What is Component Interaction:
+
+Communication between  mulitple Components.
+
+Ways:
+1. HTML
+to pass data to child:
+use @Input decorator.
+
+2. TS
+3. Service

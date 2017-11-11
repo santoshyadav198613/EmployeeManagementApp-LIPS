@@ -1,0 +1,45 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        ID
+      </th>
+      <th>
+        NAME
+      </th>
+      <th>
+        AGE
+      </th>
+      <th>
+        Index
+      </th>
+      <th>
+        Even
+      </th>
+      <th>
+        odd
+      </th>
+      <th>
+        first
+      </th>
+      <th>
+        last
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of empList;let i=index ; let isEven=even ; let isOdd=odd ;
+    let isFirst=first ;let isLast=last; ">
+      <td>{{emp.id}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.age}}</td>
+      <td>{{index}}</td>
+      <td>{{isEven}}</td>
+      <td>{{isOdd}}</td>
+      <td>{{isFirst}}</td>
+      <td>{{isLast}}</td>
+
+    </tr>
+  </tbody>
+</table>
