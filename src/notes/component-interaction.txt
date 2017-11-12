@@ -7,5 +7,10 @@ Ways:
 to pass data to child:
 use @Input decorator.
 
+to pass data from child to parent 
+use @Output.
+
 2. TS
+1. Using @ViewChild
+2. 
 3. Service

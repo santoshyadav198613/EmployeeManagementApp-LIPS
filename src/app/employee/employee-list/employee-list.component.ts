@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component, OnInit,
+  Input, Output, EventEmitter
+} from '@angular/core';
 
 @Component({
   selector: 'app-employee-list',
@@ -7,9 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EmployeeListComponent implements OnInit {
   @Input() empList: any[];
+  @Output() message = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
   }
 
+  sendToParent() {
+    this.message.emit("This is message from child");
+  }
 }

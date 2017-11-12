@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
-
+  message: string;
   name: string = 'Sunil';
   divVisible: boolean = false;
   employeeList: any[] = [
@@ -20,4 +20,7 @@ export class EmployeeComponent {
     this.divVisible = !this.divVisible;
   }
 
+  receiveFromChild(message: string){
+    this.message = message;
+  }
 }
