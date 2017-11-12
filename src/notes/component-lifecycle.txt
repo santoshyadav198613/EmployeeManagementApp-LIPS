@@ -1,0 +1,4 @@
+1. constructor: No code to be written, only to be used for DI.
+2. ngOnInit:  This is the event which gets called once view is intialised.
+3. ngOnChanges: works with input properties, to track old and new value.
+4. ngDoCheck : This event is called after Init and after any event is fired.Never implememnt ngOnChanges and ngDoCheck together.

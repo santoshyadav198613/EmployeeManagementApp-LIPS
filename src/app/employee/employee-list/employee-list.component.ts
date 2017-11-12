@@ -1,6 +1,7 @@
 import {
   Component, OnInit,
-  Input, Output, EventEmitter
+  Input, Output, EventEmitter,
+  OnChanges, SimpleChanges
 } from '@angular/core';
 
 @Component({
@@ -8,11 +9,15 @@ import {
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
-export class EmployeeListComponent implements OnInit {
+export class EmployeeListComponent implements OnInit, OnChanges {
   @Input() empList: any[];
   @Output() message = new EventEmitter<string>();
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
+  
   ngOnInit() {
   }
 

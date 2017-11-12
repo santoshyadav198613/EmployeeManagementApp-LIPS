@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
 })
-export class EmployeeComponent {
+export class EmployeeComponent implements DoCheck {
   message: string;
   name: string = 'Sunil';
   divVisible: boolean = false;
@@ -16,11 +16,15 @@ export class EmployeeComponent {
   ];
   constructor() { }
 
+  ngDoCheck(): void {
+    console.log('this is do check event.');
+  }
+
   toggle() {
     this.divVisible = !this.divVisible;
   }
 
-  receiveFromChild(message: string){
+  receiveFromChild(message: string) {
     this.message = message;
   }
 }
