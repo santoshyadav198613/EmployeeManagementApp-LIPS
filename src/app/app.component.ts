@@ -7,6 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  userRole : string ='SuperAdmin';
+  userRole: string = 'SuperAdmin';
+  isVisible: boolean = false;
+
+  toggle() {
+    this.isVisible = !this.isVisible;
+  }
 
 }

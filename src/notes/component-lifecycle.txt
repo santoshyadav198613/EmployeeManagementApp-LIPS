@@ -2,3 +2,5 @@
 2. ngOnInit:  This is the event which gets called once view is intialised.
 3. ngOnChanges: works with input properties, to track old and new value.
 4. ngDoCheck : This event is called after Init and after any event is fired.Never implememnt ngOnChanges and ngDoCheck together.
+5. OnDestroy: To handle destory event of component, which means once component is removed from DOM.
+6. AfterViewInit:  This is the event where we can access the properties which are not available during Init like ViewChildren.
