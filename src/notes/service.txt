@@ -1,0 +1,4 @@
+How to create a class based service:
+1. ng g service <service_name>
+
+We need to register a service before using it.

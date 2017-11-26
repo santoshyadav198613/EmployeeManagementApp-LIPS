@@ -1,21 +1,22 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
+import { EmployeeService } from '../service/employee/employee.service';
+import { Employee } from '../service/employee/employee';
 
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
 })
-export class EmployeeComponent implements DoCheck {
+export class EmployeeComponent implements OnInit, DoCheck {
   message: string;
   name: string = 'Sunil';
   divVisible: boolean = false;
-  employeeList: any[] = [
-    { id: 1, name: 'Test1', age: 34 },
-    { id: 3, name: 'Test3', age: 35 },
-    { id: 2, name: 'Test2', age: 37 }
-  ];
-  constructor() { }
+  employeeList: Employee[];
+  constructor(private empService: EmployeeService) { }
 
+  ngOnInit(): void {
+    this.employeeList = this.empService.getEmployeeList();
+  }
   ngDoCheck(): void {
     console.log('this is do check event.');
   }

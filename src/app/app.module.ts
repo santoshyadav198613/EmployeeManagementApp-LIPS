@@ -7,6 +7,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentDetailsComponent } from './department/department-details/depart-details.component';
 
+import { EmployeeService } from './service/employee/employee.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,7 @@ import { DepartmentDetailsComponent } from './department/department-details/depa
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
