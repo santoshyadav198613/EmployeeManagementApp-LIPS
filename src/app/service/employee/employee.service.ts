@@ -16,4 +16,11 @@ export class EmployeeService {
     ]
   }
 
+  addEmployee(){
+    let emp: Employee = { id: 5, name: 'Rohit', age: 32, dob: new Date('23-Jan-1985'), salary: 85000 };
+
+    this.employeeList.push(emp);
+
+  }
+
 }

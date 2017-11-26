@@ -6,6 +6,7 @@ import { Employee } from '../service/employee/employee';
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css']
+  //, providers : [EmployeeService] for local instance
 })
 export class EmployeeComponent implements OnInit, DoCheck {
   message: string;

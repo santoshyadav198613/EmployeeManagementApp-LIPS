@@ -2,3 +2,9 @@ How to create a class based service:
 1. ng g service <service_name>
 
 We need to register a service before using it.
+
+Singleton:
+If you register it at module level.
+
+Non-Singleton:
+If we register it at component level.
