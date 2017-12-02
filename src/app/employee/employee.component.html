@@ -13,7 +13,40 @@
 
 <button type="button" (click)="toggle()">Toggle</button>
 
-{{employeeList | json }}
+<h1>
+    Employee Form
+</h1>
+
+{{employee | json}}
+{{empForm.valid | json}}
+{{empForm.invalid | json}}
+{{empForm.pristine | json}}
+{{empForm.dirty | json}}
+{{empForm.value | json}}
+<form #empForm="ngForm" (submit)="save()" novalidate>
+    <div class="form-group">
+        <input required class="form-control" [(ngModel)]="employee.id" type="number" name="id" placeholder="Employee ID">
+    </div>
+    <div class="form-group">
+        <input required minlength="3" max="8" class="form-control" type="text" name="name" [(ngModel)]="employee.name" placeholder="Employee Name">
+    </div>
+    <div class="form-group">
+        <input class="form-control" required min="4" max="45" [(ngModel)]="employee.age" type="number" name="age" placeholder="Employee Age">
+    </div>
+    <div class="form-group">
+        <input type="date" required class="form-control" name="dob" [(ngModel)]="employee.dob" placeholder="Employee DOB">
+    </div>
+    <div class="form-group">
+        <input type="number" required [(ngModel)]="employee.salary" class="form-control" name="salary" placeholder="Employee Salary">
+    </div>
+    <div>
+        <button [disabled]="empForm.invalid" type="submit" class="btn btn-primary">Save</button>    
+    </div>
+    
+</form>
+
+
+<!-- {{employeeList | json }} -->
 <app-employee-list [empList]="employeeList" (message)="receiveFromChild($event)"></app-employee-list>
 
 {{message}}

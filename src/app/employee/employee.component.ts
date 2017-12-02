@@ -13,6 +13,7 @@ export class EmployeeComponent implements OnInit, DoCheck {
   name: string = 'Sunil';
   divVisible: boolean = false;
   employeeList: Employee[];
+  employee: Employee = new Employee();
   constructor(private empService: EmployeeService) { }
 
   ngOnInit(): void {
@@ -20,6 +21,10 @@ export class EmployeeComponent implements OnInit, DoCheck {
   }
   ngDoCheck(): void {
     console.log('this is do check event.');
+  }
+
+  save(){
+    console.log(this.employee);
   }
 
   toggle() {
