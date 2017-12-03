@@ -1,0 +1,57 @@
+<p>
+  customer works!
+</p>
+{{customerForm.value | json}}
+
+<form [formGroup]="customerForm" novalidate>
+  <div class="form-group">
+    <input class="form-control" type="number" id="custid" placeholder="Customer Id" formControlName="id">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" id="custname" placeholder="Customer Name" formControlName="name">
+  </div>
+  <div class="form-group">
+    <input type="email" id="email" class="form-control" placeholder="Customer Email" formControlName="email">
+  </div>
+  <div class="form-group">
+    <input type="date" id="dob" class="form-control" placeholder="Customer DOB" formControlName="dob">
+  </div>
+  <div formGroupName="address">
+    <div class="form-group">
+      <input class="form-control" type="text" id="addr1" placeholder="Address Line1" formControlName="addressLine1">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="addr2" placeholder="Address Line2" formControlName="addressLine2">
+    </div>
+    <div class="form-group">
+      <input type="text" id="city" class="form-control" placeholder="City" formControlName="city">
+    </div>
+    <div class="form-group">
+      <input type="number" id="pin" class="form-control" placeholder="Pin" formControlName="pin">
+    </div>
+  </div>
+  <button type="button" (click)="addCard()" class="btn btn-success">Add Card</button>
+  <div formArrayName="cards">
+    <div *ngFor="let card of customerForm['controls'].cards['controls'];let i=index">
+
+      <div [formGroupName]="i">
+        <div class="form-group">
+          <input class="form-control" type="number" id="card" placeholder="Card Number" formControlName="cardNumber">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" id="expmonth" placeholder="Year" formControlName="expMonth">
+        </div>
+        <div class="form-group">
+          <input type="number" id="expyear" class="form-control" placeholder="Month" formControlName="expYear">
+        </div>
+        <div class="form-group">
+          <input type="number" id="cvv" class="form-control" placeholder="Cvv" formControlName="cvv">
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>

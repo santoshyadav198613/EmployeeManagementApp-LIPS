@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
@@ -12,17 +12,20 @@ import { DepartmentDetailsComponent } from './department/department-details/depa
 import { EmployeeNewService } from './service/employee/employee-new.service';
 
 import { EmployeeService } from './service/employee/employee.service';
+import { CustomerComponent } from './customer/customer.component';
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeComponent,
     EmployeeListComponent,
     DepartmentComponent,
-    DepartmentDetailsComponent
+    DepartmentDetailsComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   // providers: [EmployeeService],
   providers: [{ provide: EmployeeService, useClass: EmployeeNewService }],
