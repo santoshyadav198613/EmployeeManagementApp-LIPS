@@ -23,8 +23,10 @@ export class EmployeeComponent implements OnInit, DoCheck {
     console.log('this is do check event.');
   }
 
-  save(){
-    console.log(this.employee);
+  save(empForm){
+    this.empService.addEmp(this.employee);
+    this.employee = new Employee();
+    empForm.reset();
   }
 
   toggle() {

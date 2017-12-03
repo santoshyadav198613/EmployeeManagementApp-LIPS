@@ -23,10 +23,10 @@
 {{empForm.pristine | json}}
 {{empForm.dirty | json}}
 {{empForm.value | json}}
-<form #empForm="ngForm" (submit)="save()" novalidate>
+<form #empForm="ngForm" (submit)="save(empForm)" novalidate>
     <div class="form-group">
         <input #empid="ngModel" required class="form-control" [(ngModel)]="employee.id" type="number" name="id" placeholder="Employee ID">
-        <div class="alert alert-danger" [hidden]="empid.valid">
+        <div class="alert alert-danger" [hidden]="empid.valid || empid.pristine">
                 Please provide the employee id.
         </div>
     </div>
