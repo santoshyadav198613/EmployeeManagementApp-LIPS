@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
+import { cardValidator } from '../custom/cardnumber-validator';
+
+import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-customer',
@@ -13,45 +15,45 @@ export class CustomerComponent implements OnInit {
 
   ngOnInit() {
     this.customerForm = this.fb.group({
-      id: new FormControl('', []),
-      name: new FormControl('', []),
-      email: new FormControl('', []),
-      dob: new FormControl('', []),
+      id: new FormControl('', [Validators.required]),
+      name: new FormControl('', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]),
+      email: new FormControl('', [Validators.email]),
+      dob: new FormControl('', [Validators.required]),
       address: this.fb.group(
         {
-          addressLine1: new FormControl('', []),
+          addressLine1: new FormControl('', [Validators.required]),
           addressLine2: new FormControl('', []),
-          city: new FormControl('', []),
-          pin: new FormControl('', [])
+          city: new FormControl('', [Validators.required]),
+          pin: new FormControl('', [Validators.required])
         }
       ),
       cards: this.fb.array(
         [
-          this.fb.group(
-            {
-              cardNumber: new FormControl('', []),
-              expMonth: new FormControl('', []),
-              expYear: new FormControl('', []),
-              cvv: new FormControl('', [])
-            }
-          )
+          this.buildForm()
         ]
       )
     });
   }
 
+  buildForm() {
+    return this.fb.group(
+      {
+        cardNumber: new FormControl('', [Validators.required, cardValidator]),
+        expMonth: new FormControl('', [Validators.required]),
+        expYear: new FormControl('', [Validators.required]),
+        cvv: new FormControl('', [Validators.required])
+      }
+    )
+  }
 
   addCard() {
     let card = this.customerForm.controls['cards'] as FormArray;
+    card.push(this.buildForm());
+  }
 
-    card.push(this.fb.group(
-      {
-        cardNumber: new FormControl('', []),
-        expMonth: new FormControl('', []),
-        expYear: new FormControl('', []),
-        cvv: new FormControl('', [])
-      }
-    ));
+  save() {
+    console.log(this.customerForm.value);
+    // this.customerForm.reset();
   }
 
 

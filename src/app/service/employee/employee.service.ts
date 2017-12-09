@@ -22,8 +22,8 @@ export class EmployeeService {
     this.employeeList.push(emp);
   }
 
-  addEmp(emp: Employee) {
-      this.employeeList.push(emp);
+  addEmp(empl: Employee) {
+      this.employeeList.push(empl);
   }
 
 }
