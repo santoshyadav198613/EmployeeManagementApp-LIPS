@@ -19,6 +19,7 @@ import { EmployeeService } from './service/employee/employee.service';
 import { CustomerComponent } from './customer/customer.component';
 import { CommentsComponent } from './comments/comments.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
     DepartmentDetailsComponent,
     CustomerComponent,
     CommentsComponent,
-    CommentListComponent
+    CommentListComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
       { path:'employee' , component : EmployeeComponent },
       { path:'customer', component : CustomerComponent },
       { path:'department', component : DepartmentComponent },
-      { path: '' , redirectTo : 'comments', pathMatch : 'full' } //set default route
+      { path: '' , redirectTo : 'comments', pathMatch : 'full' }, //set default route
+      { path: '**' , component:  PagenotfoundComponent  }
     ]) 
   ],
   // providers: [EmployeeService],
