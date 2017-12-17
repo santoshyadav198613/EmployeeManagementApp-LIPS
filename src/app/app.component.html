@@ -1,10 +1,10 @@
 <!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
+<div class="container">
+  <!-- <h1>
     Welcome to {{title}}!!
-  </h1>
+  </h1> -->
 
-  <div [ngSwitch]="userRole">
+  <!-- <div [ngSwitch]="userRole">
     <div *ngSwitchCase="'Admin'">
       This is Admin View
     </div>
@@ -18,24 +18,44 @@
       This is default view.
     </div>
   </div>
-</div>
+</div> -->
 
-<hr>
+<!-- <hr> -->
 
-<div *ngIf="isVisible">
+<!-- <div *ngIf="isVisible">
   <app-department></app-department>  
 </div>
-<app-employee></app-employee>
+<app-employee></app-employee> -->
 
-<button class="btn btn-primary" (click)="toggle()">Toggle</button>
-
+<!-- <button class="btn btn-primary" (click)="toggle()">Toggle</button> -->
+<!-- 
 {{empList | json}}
 
-<button type="button" class="btn btn-primary" (click)="addEmp()">Add Employee</button>
+<button type="button" class="btn btn-primary" (click)="addEmp()">Add Employee</button> -->
 
-<hr>
+<!-- <hr>
 
 <app-customer></app-customer>
 
 <hr>
-<app-comments></app-comments>
+<app-comments></app-comments> -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">{{title}}</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="comments">Comments</a></li>
+      <li><a routerLink="employee">Employee</a></li>
+      <li><a routerLink="department">Department</a></li>
+      <li><a routerLink="customer">Customer</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Host } from '@angular/core';
 
 import { CommentService } from '../../service/comment/comment.service';
 
@@ -11,7 +11,7 @@ import { Comments } from '../../service/comment/comments';
 })
 export class CommentListComponent implements OnInit {
   commentsList: Comments[];
-  constructor(private commentService: CommentService) { }
+  constructor( private  commentService: CommentService) { }
 
   ngOnInit() {
     this.commentService.getComments().subscribe(

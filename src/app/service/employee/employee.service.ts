@@ -3,7 +3,7 @@ import { Employee } from "./employee";
 @Injectable()
 export class EmployeeService {
 
-  employeeList: Employee[] = [];
+  employeeList: Employee[]=[];
   // empList : Array<Employee> = new Array<Employee>();
   constructor() { }
 

@@ -2,4 +2,24 @@
   Comments
 </h1>
 
+{{comment  | json}}
+<form #commentForm="ngForm" (submit)="save();commentForm.reset()">
+  <div class="form-group">
+    <input required class="form-control" type="number" name="postid" [(ngModel)]="comment.postId" placeholder="Post Id">
+  </div>
+  <div class="form-group">
+    <input required class="form-control" type="text" name="name" [(ngModel)]="comment.name" placeholder="Name">
+  </div>
+  <div class="form-group">
+    <input required class="form-control" type="text" name="email" [(ngModel)]="comment.email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <input required type="text" class="form-control" name="body" [(ngModel)]="comment.body" placeholder="Body">
+  </div>
+  <div>
+    <button [disabled]="commentForm.invalid" type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
+
+
 <app-comment-list></app-comment-list>

@@ -7,7 +7,7 @@ import { Employee } from './service/employee/employee';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
+  title = 'Contact Management App';
   userRole: string = 'SuperAdmin';
   isVisible: boolean = false;
   empList : Employee[];

@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -32,7 +34,14 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'comments', component: CommentsComponent },
+      { path:'employee' , component : EmployeeComponent },
+      { path:'customer', component : CustomerComponent },
+      { path:'department', component : DepartmentComponent },
+      { path: '' , redirectTo : 'comments', pathMatch : 'full' } //set default route
+    ]) 
   ],
   // providers: [EmployeeService],
   providers: [{ provide: EmployeeService, useClass: EmployeeNewService }],
