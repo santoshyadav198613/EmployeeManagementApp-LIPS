@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './employee/employee.component';
@@ -20,6 +20,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { CommentsComponent } from './comments/comments.component';
 import { CommentListComponent } from './comments/comment-list/comment-list.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+
+import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,15 +41,16 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'comments', component: CommentsComponent },
-      { path:'employee' , component : EmployeeComponent },
-      { path:'customer', component : CustomerComponent },
-      { path:'department', component : DepartmentComponent },
-      { path: '' , redirectTo : 'comments', pathMatch : 'full' }, //set default route
-      { path: '**' , component:  PagenotfoundComponent  }
-    ]) 
+      { path: 'employee', component: EmployeeComponent },
+      { path: 'customer', component: CustomerComponent },
+      { path: 'department', component: DepartmentComponent },
+      { path: '', redirectTo: 'comments', pathMatch: 'full' }, //set default route
+      { path: '**', component: PagenotfoundComponent }
+    ])
   ],
   // providers: [EmployeeService],
-  providers: [{ provide: EmployeeService, useClass: EmployeeNewService }],
+  providers: [{ provide: EmployeeService, useClass: EmployeeNewService },
+  { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
