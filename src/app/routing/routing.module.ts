@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { DepartmentComponent } from '../department/department.component';
 import { CustomerComponent } from '../customer/customer.component';
-import { CommentsComponent } from '../comments/comments.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 
 import { LoginComponent } from '../login/login.component';
@@ -12,7 +11,6 @@ import { LoginComponent } from '../login/login.component';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: 'comments', component: CommentsComponent },
       { path: 'login' , component: LoginComponent  },
       { path: 'customer', component: CustomerComponent },
       { path: 'department', component: DepartmentComponent },

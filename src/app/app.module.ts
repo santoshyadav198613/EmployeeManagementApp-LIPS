@@ -9,6 +9,7 @@ import { EmployeeModule } from './employee/employee.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+import { CommentsModule } from './comments/comments.module';
 
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentDetailsComponent } from './department/department-details/depart-details.component';
@@ -28,8 +29,6 @@ import { LoginService } from './service/login/login.service';
     DepartmentComponent,
     DepartmentDetailsComponent,
     CustomerComponent,
-    CommentsComponent,
-    CommentListComponent,
     PagenotfoundComponent,
     LoginComponent
   ],
@@ -37,6 +36,7 @@ import { LoginService } from './service/login/login.service';
     BrowserModule,
     SharedModule,
     EmployeeModule,
+    CommentsModule,
     RoutingModule
   ],
   // providers: [EmployeeService],

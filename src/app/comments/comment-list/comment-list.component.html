@@ -5,32 +5,38 @@
 <!-- {{commentsList| json}} -->
 
 <table class="table">
- <thead>
-  <tr>
-    <th>Post Id</th>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Email</th>   
-    <th>Body</th>   
-  </tr>
- </thead>
- <tbody>
-   <tr *ngFor="let comment of commentsList">
-     <td>
-       {{comment.postId}}
-     </td>
-     <td>
-      {{comment.id}}
-     </td>
-     <td>
-      {{comment.name}}
-     </td>
-     <td>
-      {{comment.email}}
-     </td>
-     <td>
-      {{comment.body}}
-     </td>
-   </tr>
- </tbody>
+  <thead>
+    <tr>
+      <th>Post Id</th>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Body</th>
+      <th>
+        Details
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let comment of commentsList">
+      <td>
+        {{comment.postId}}
+      </td>
+      <td>
+        {{comment.id}}
+      </td>
+      <td>
+        {{comment.name}}
+      </td>
+      <td>
+        {{comment.email}}
+      </td>
+      <td>
+        {{comment.body}}
+      </td>
+      <td>
+        <button type="button" [routerLink]="[comment.id]">Details</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
