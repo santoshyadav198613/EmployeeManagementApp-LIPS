@@ -15,7 +15,7 @@ export class EmployeeListComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    console.log("changes="+ changes);
   }
   
   ngOnInit() {
