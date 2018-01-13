@@ -6,6 +6,8 @@ import { RoutingModule } from './routing/routing.module';
 
 import { EmployeeModule } from './employee/employee.module';
 
+import { SharedModule } from  './shared/shared.module';
+
 import { AppComponent } from './app.component';
 
 import { DepartmentComponent } from './department/department.component';
@@ -29,9 +31,7 @@ import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
+    SharedModule,
     EmployeeModule,
     RoutingModule
   ],

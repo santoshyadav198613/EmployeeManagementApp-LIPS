@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+
 import { EmployeeComponent } from './employee.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 
@@ -11,8 +11,7 @@ import { EmployeeService } from '../service/employee/employee.service';
 
 @NgModule({
   imports: [
-    CommonModule,
-    FormsModule,
+    SharedModule,
     RouterModule.forChild(
       [
         { path: 'employee', component: EmployeeComponent }
