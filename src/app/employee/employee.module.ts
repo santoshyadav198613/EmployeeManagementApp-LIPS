@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { FormsModule } from '@angular/forms';
 import { EmployeeComponent } from './employee.component';
@@ -11,7 +12,12 @@ import { EmployeeService } from '../service/employee/employee.service';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forChild(
+      [
+        { path: 'employee', component: EmployeeComponent }
+      ]
+    )
   ],
   declarations: [
     EmployeeComponent,

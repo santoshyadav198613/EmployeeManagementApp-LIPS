@@ -32,8 +32,8 @@ import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RoutingModule,
-    EmployeeModule
+    EmployeeModule,
+    RoutingModule
   ],
   // providers: [EmployeeService],
   providers: [
