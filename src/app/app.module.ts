@@ -6,7 +6,7 @@ import { RoutingModule } from './routing/routing.module';
 
 import { EmployeeModule } from './employee/employee.module';
 
-import { SharedModule } from  './shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
 
@@ -19,6 +19,9 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
+import { LoginComponent } from './login/login.component';
+
+import { LoginService } from './service/login/login.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,8 @@ import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
     CustomerComponent,
     CommentsComponent,
     CommentListComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,7 @@ import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
   ],
   // providers: [EmployeeService],
   providers: [
-  { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }],
+    { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
