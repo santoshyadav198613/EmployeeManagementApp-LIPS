@@ -23,6 +23,8 @@ import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
 import { LoginComponent } from './login/login.component';
 
 import { LoginService } from './service/login/login.service';
+
+import { AuthGuard } from './service/guards/auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,7 @@ import { LoginService } from './service/login/login.service';
   ],
   // providers: [EmployeeService],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }, LoginService],
+    { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }, LoginService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

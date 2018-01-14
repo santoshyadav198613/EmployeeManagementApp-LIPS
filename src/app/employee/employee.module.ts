@@ -10,13 +10,14 @@ import { EmployeeNewService } from '../service/employee/employee-new.service';
 import { EmployeeService } from '../service/employee/employee.service';
 import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 
+import { AuthGuard } from '../service/guards/auth.guard';
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild(
       [
         {
-          path: 'employee', component: EmployeeComponent,
+          path: 'employee', component: EmployeeComponent, canActivate: [AuthGuard],
           children: [
             { path: ':id/edit', component: EmployeeEditComponent }
           ]

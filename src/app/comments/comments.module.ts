@@ -9,13 +9,18 @@ import { CommentListComponent } from './comment-list/comment-list.component';
 
 import { CommentService } from '../service/comment/comment.service';
 import { CommentsDetailsComponent } from './comments-details/comments-details.component';
+
+import { AuthGuard } from '../service/guards/auth.guard';
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild(
       [
-        { path: 'comments', component: CommentsComponent },
-        { path: 'comments/:id', component: CommentsDetailsComponent }
+        {
+          path: 'comments', component: CommentsComponent,
+          canActivate: [AuthGuard]
+        },
+        { path: 'comments/:id', component: CommentsDetailsComponent ,canActivate: [AuthGuard] }
       ]
     )
   ],
@@ -24,6 +29,6 @@ import { CommentsDetailsComponent } from './comments-details/comments-details.co
     CommentListComponent,
     CommentsDetailsComponent,
   ],
-  providers : [CommentService]
+  providers: [CommentService]
 })
 export class CommentsModule { }

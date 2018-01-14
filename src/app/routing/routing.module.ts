@@ -7,13 +7,14 @@ import { CustomerComponent } from '../customer/customer.component';
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 
 import { LoginComponent } from '../login/login.component';
+import { AuthGuard } from '../service/guards/auth.guard';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forRoot([
       { path: 'login' , component: LoginComponent  },
-      { path: 'customer', component: CustomerComponent },
-      { path: 'department', component: DepartmentComponent },
+      { path: 'customer', component: CustomerComponent  , canActivate: [AuthGuard],},
+      { path: 'department', component: DepartmentComponent , canActivate: [AuthGuard],},
       { path: '', redirectTo: 'login', pathMatch: 'full' }, //set default route
       { path: '**', component: PagenotfoundComponent }
     ])

@@ -1,7 +1,7 @@
 <h1>
   Login
 </h1>
-<form #loginForm="ngForm" (submit)="login()">
+<form class="col-md-6" #loginForm="ngForm" (submit)="login()">
   <div class="form-group">
     <input class="form-control" required type="text" [(ngModel)]="user.userName" name="username" placeholder="User Name">
   </div>
