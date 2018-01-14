@@ -1,4 +1,3 @@
-
 <table class="table">
   <thead>
     <tr>
@@ -37,10 +36,10 @@
     <tr *ngFor="let emp of empList;let i=index ; let isEven=even ; let isOdd=odd ;
     let isFirst=first ;let isLast=last; ">
       <td>{{emp.id}}</td>
-      <td>{{emp.name}}</td>
-      <td>{{emp.age}}</td>
-      <td>{{emp.dob}}</td>
-      <td>{{emp.salary}}</td>
+      <td>{{emp.name | lowercase }}</td>
+      <td>{{emp.age | percent}}</td>
+      <td>{{emp.dob | date : 'dd-MMM-yyyy'}}</td>
+      <td>{{emp.salary | currency : 'INR'}}</td>
       <td>
         <button type="button" class="btn btn-primary" [routerLink]="[emp.id,'edit']">Edit</button>
       </td>
