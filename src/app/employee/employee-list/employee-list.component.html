@@ -34,7 +34,7 @@
   </thead>
   <tbody>
     <tr *ngFor="let emp of empList;let i=index ; let isEven=even ; let isOdd=odd ;
-    let isFirst=first ;let isLast=last; ">
+    let isFirst=first ;let isLast=last;trackBy : identify ">
       <td>{{emp.id}}</td>
       <td>{{emp.name | lowercase }}</td>
       <td>{{emp.age | percent}}</td>

@@ -15,13 +15,19 @@ export class EmployeeListComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("changes="+ changes);
+    console.log("changes=" + changes);
   }
-  
+
   ngOnInit() {
   }
 
   sendToParent() {
     this.message.emit("This is message from child");
+  }
+
+
+  identify(index, item) {
+    //do what ever logic you need to come up with the unique identifier of your item in loop, I will just return the object id.
+    return item.id;
   }
 }
