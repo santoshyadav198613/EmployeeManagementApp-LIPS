@@ -8,19 +8,26 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 import { EmployeeNewService } from '../service/employee/employee-new.service';
 import { EmployeeService } from '../service/employee/employee.service';
+import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild(
       [
-        { path: 'employee', component: EmployeeComponent }
+        {
+          path: 'employee', component: EmployeeComponent,
+          children: [
+            { path: ':id/edit', component: EmployeeEditComponent }
+          ]
+        }
       ]
     )
   ],
   declarations: [
     EmployeeComponent,
     EmployeeListComponent,
+    EmployeeEditComponent,
   ],
   providers: [{ provide: EmployeeService, useClass: EmployeeNewService }]
 })

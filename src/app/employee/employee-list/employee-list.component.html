@@ -28,6 +28,9 @@
       <th>
         last
       </th> -->
+      <th>
+        Edit
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -38,6 +41,9 @@
       <td>{{emp.age}}</td>
       <td>{{emp.dob}}</td>
       <td>{{emp.salary}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" [routerLink]="[emp.id,'edit']">Edit</button>
+      </td>
       <!-- <td>{{index}}</td>
       <td>{{isEven}}</td>
       <td>{{isOdd}}</td>

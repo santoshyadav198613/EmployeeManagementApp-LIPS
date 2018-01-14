@@ -48,7 +48,7 @@
     
 </form>
 
-
+<router-outlet></router-outlet>
 <!-- {{employeeList | json }} -->
 <app-employee-list [empList]="employeeList" (message)="receiveFromChild($event)"></app-employee-list>
 
