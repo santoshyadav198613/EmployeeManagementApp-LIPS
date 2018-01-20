@@ -18,6 +18,7 @@ import { AuthGuard } from '../service/guards/auth.guard';
       [
         {
           path: 'employee', component: EmployeeComponent, canActivate: [AuthGuard],
+          canActivateChild: [AuthGuard],
           children: [
             { path: ':id/edit', component: EmployeeEditComponent }
           ]

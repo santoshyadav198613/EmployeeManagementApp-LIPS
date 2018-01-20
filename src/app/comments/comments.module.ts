@@ -9,6 +9,7 @@ import { CommentListComponent } from './comment-list/comment-list.component';
 
 import { CommentService } from '../service/comment/comment.service';
 import { CommentsDetailsComponent } from './comments-details/comments-details.component';
+import { CommentResolveGuard } from '../service/comment/comment-resolve.guard';
 
 import { AuthGuard } from '../service/guards/auth.guard';
 @NgModule({
@@ -18,9 +19,12 @@ import { AuthGuard } from '../service/guards/auth.guard';
       [
         {
           path: 'comments', component: CommentsComponent,
-          canActivate: [AuthGuard]
+          canActivate: [AuthGuard],
+          resolve: {
+            commentList: CommentResolveGuard
+          }
         },
-        { path: 'comments/:id', component: CommentsDetailsComponent ,canActivate: [AuthGuard] }
+        { path: 'comments/:id', component: CommentsDetailsComponent, canActivate: [AuthGuard] }
       ]
     )
   ],
@@ -29,6 +33,6 @@ import { AuthGuard } from '../service/guards/auth.guard';
     CommentListComponent,
     CommentsDetailsComponent,
   ],
-  providers: [CommentService]
+  providers: [CommentService, CommentResolveGuard]
 })
 export class CommentsModule { }
