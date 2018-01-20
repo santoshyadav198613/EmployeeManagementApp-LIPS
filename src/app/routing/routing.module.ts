@@ -12,9 +12,10 @@ import { AuthGuard } from '../service/guards/auth.guard';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: 'login' , component: LoginComponent  },
-      { path: 'customer', component: CustomerComponent  , canActivate: [AuthGuard],},
-      { path: 'department', component: DepartmentComponent , canActivate: [AuthGuard],},
+      { path: 'login', component: LoginComponent },
+      { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard], },
+      { path: 'department', component: DepartmentComponent, canActivate: [AuthGuard] },
+      { path: 'comments', loadChildren: '../comments/comments.module#CommentsModule' },
       { path: '', redirectTo: 'login', pathMatch: 'full' }, //set default route
       { path: '**', component: PagenotfoundComponent }
     ])

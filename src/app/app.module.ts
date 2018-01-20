@@ -38,7 +38,6 @@ import { AuthGuard } from './service/guards/auth.guard';
     BrowserModule,
     SharedModule,
     EmployeeModule,
-    CommentsModule,
     RoutingModule
   ],
   // providers: [EmployeeService],

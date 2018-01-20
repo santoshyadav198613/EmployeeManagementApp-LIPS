@@ -18,13 +18,13 @@ import { AuthGuard } from '../service/guards/auth.guard';
     RouterModule.forChild(
       [
         {
-          path: 'comments', component: CommentsComponent,
+          path: '', component: CommentsComponent,
           canActivate: [AuthGuard],
           resolve: {
             commentList: CommentResolveGuard
           }
         },
-        { path: 'comments/:id', component: CommentsDetailsComponent, canActivate: [AuthGuard] }
+        { path: ':id', component: CommentsDetailsComponent, canActivate: [AuthGuard] }
       ]
     )
   ],
