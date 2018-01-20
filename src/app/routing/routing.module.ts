@@ -8,6 +8,9 @@ import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 
 import { LoginComponent } from '../login/login.component';
 import { AuthGuard } from '../service/guards/auth.guard';
+
+import { CommentLoadGuard } from '../service/comment/comment-load.guard';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,7 +18,7 @@ import { AuthGuard } from '../service/guards/auth.guard';
       { path: 'login', component: LoginComponent },
       { path: 'customer', component: CustomerComponent, canActivate: [AuthGuard], },
       { path: 'department', component: DepartmentComponent, canActivate: [AuthGuard] },
-      { path: 'comments', loadChildren: '../comments/comments.module#CommentsModule' },
+      { path: 'comments', loadChildren: '../comments/comments.module#CommentsModule', canLoad: [CommentLoadGuard] },
       { path: '', redirectTo: 'login', pathMatch: 'full' }, //set default route
       { path: '**', component: PagenotfoundComponent }
     ])
