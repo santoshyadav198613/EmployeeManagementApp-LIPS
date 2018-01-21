@@ -27,6 +27,9 @@ import { LoginService } from './service/login/login.service';
 import { AuthGuard } from './service/guards/auth.guard';
 
 import { CommentLoadGuard } from './service/comment/comment-load.guard';
+
+import { valueProvider, VALUE_CONFIG } from './service/valueprovider/valueprovider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,8 @@ import { CommentLoadGuard } from './service/comment/comment-load.guard';
   ],
   // providers: [EmployeeService],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }, LoginService, AuthGuard, CommentLoadGuard],
+    { provide: HTTP_INTERCEPTORS, useClass: ApiinterceptorService, multi: true }, LoginService, AuthGuard, CommentLoadGuard,
+    { provide: valueProvider, useValue: VALUE_CONFIG }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
