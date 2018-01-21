@@ -30,6 +30,7 @@ import { CommentLoadGuard } from './service/comment/comment-load.guard';
 
 import { valueProvider, VALUE_CONFIG } from './service/valueprovider/valueprovider';
 
+
 @NgModule({
   declarations: [
     AppComponent,

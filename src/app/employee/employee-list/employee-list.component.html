@@ -39,7 +39,7 @@
       <td>{{emp.name | lowercase }}</td>
       <td>{{emp.age | percent}}</td>
       <td>{{emp.dob | date : 'dd-MMM-yyyy'}}</td>
-      <td>{{emp.salary | currency : 'INR'}}</td>
+      <td>{{emp.salary | customcurrency : '$'}}</td>
       <td>
         <button type="button" class="btn btn-primary" [routerLink]="[emp.id,'edit']">Edit</button>
       </td>
