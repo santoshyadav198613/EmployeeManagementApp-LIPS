@@ -4,16 +4,26 @@ import { cardValidator } from '../custom/cardnumber-validator';
 
 import { FormGroup, FormBuilder, FormControl, FormArray, Validators } from '@angular/forms';
 
+import { CustomerService } from '../service/customer/customer.service';
+
+import { customerFactory } from '../service/customer/customer-factory';
+import { LoginService } from '../service/login/login.service';
+
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css']
+  styleUrls: ['./customer.component.css'],
+  providers: [{ provide: CustomerService, useFactory: customerFactory, deps: [LoginService] }]
 })
 export class CustomerComponent implements OnInit {
   customerForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+    private customerService: CustomerService) { }
 
   ngOnInit() {
+
+    console.log(this.customerService.getCustomers());
+
     this.customerForm = this.fb.group({
       id: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.minLength(7), Validators.maxLength(15)]),
