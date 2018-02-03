@@ -6,7 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { CustomcurrencyPipe } from '../common/customcurrency.pipe';
 import { SalaryfilterPipe } from '../common/salaryfilter.pipe';
-
+import { HoverDirective } from '../directives/hover.directive';
+import { PasswordValidatorDirective } from '../directives/password-validator.directive';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,8 +21,10 @@ import { SalaryfilterPipe } from '../common/salaryfilter.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     CustomcurrencyPipe,
-    SalaryfilterPipe
+    SalaryfilterPipe,
+    HoverDirective,
+    PasswordValidatorDirective
   ],
-  declarations: [CustomcurrencyPipe,SalaryfilterPipe]
+  declarations: [CustomcurrencyPipe,SalaryfilterPipe,HoverDirective,PasswordValidatorDirective]
 })
 export class SharedModule { }
