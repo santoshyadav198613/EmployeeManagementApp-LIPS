@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { CustomcurrencyPipe } from '../common/customcurrency.pipe';
+import { SalaryfilterPipe } from '../common/salaryfilter.pipe';
 
 @NgModule({
   imports: [
@@ -18,8 +19,9 @@ import { CustomcurrencyPipe } from '../common/customcurrency.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CustomcurrencyPipe
+    CustomcurrencyPipe,
+    SalaryfilterPipe
   ],
-  declarations: [CustomcurrencyPipe]
+  declarations: [CustomcurrencyPipe,SalaryfilterPipe]
 })
 export class SharedModule { }

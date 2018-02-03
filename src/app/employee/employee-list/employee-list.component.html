@@ -1,3 +1,6 @@
+<div>
+  <input type="number" [(ngModel)]="salary" placeholder="Salary" name="salary" class="form-control">
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -33,7 +36,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let emp of empList;let i=index ; let isEven=even ; let isOdd=odd ;
+    <tr *ngFor="let emp of empList | salaryfilter : salary ;let i=index ; let isEven=even ; let isOdd=odd ;
     let isFirst=first ;let isLast=last;trackBy : identify ">
       <td>{{emp.id}}</td>
       <td>{{emp.name | lowercase }}</td>

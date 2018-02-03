@@ -12,6 +12,8 @@ import {
 export class EmployeeListComponent implements OnInit, OnChanges {
   @Input() empList: any[];
   @Output() message = new EventEmitter<string>();
+
+  salary: number =0 ;
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges): void {
