@@ -10,14 +10,13 @@ import { EmployeeModule } from './employee/employee.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
-import { CommentsModule } from './comments/comments.module';
+
 
 import { DepartmentComponent } from './department/department.component';
 import { DepartmentDetailsComponent } from './department/department-details/depart-details.component';
 
 import { CustomerComponent } from './customer/customer.component';
-import { CommentsComponent } from './comments/comments.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
+
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { ApiinterceptorService } from './interceptor/apiinterceptor.service';
