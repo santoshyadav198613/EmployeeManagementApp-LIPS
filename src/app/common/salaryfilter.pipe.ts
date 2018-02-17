@@ -12,3 +12,4 @@ export class SalaryfilterPipe implements PipeTransform {
   }
 
 }
+

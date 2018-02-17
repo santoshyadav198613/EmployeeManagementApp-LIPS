@@ -7,9 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { CommentsComponent } from './comments.component';
 import { CommentListComponent } from './comment-list/comment-list.component';
 
-import { CommentService } from '../service/comment/comment.service';
+import { CommentService, CommentResolveGuard } from '../service';
 import { CommentsDetailsComponent } from './comments-details/comments-details.component';
-import { CommentResolveGuard } from '../service/comment/comment-resolve.guard';
 
 import { AuthGuard } from '../service/guards/auth.guard';
 @NgModule({

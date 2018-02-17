@@ -2,14 +2,14 @@
   Login
 </h1>
 <form class="col-md-6" #loginForm="ngForm" (submit)="login()">
-  <div class="form-group">
-    <input  appHover class="form-control" required type="text" [(ngModel)]="user.userName" name="username" placeholder="User Name">
-  </div>
+  <mat-form-field>
+    <input matInput  appHover   required type="text" [(ngModel)]="user.userName" name="username" placeholder="User Name">
+  </mat-form-field>
   <div class="form-group">
     <input appPasswordValidator appHover class="form-control" required type="password" [(ngModel)]="user.password"  name="username" placeholder="User Name" #password="ngModel">
     {{password.errors | json}}
   </div>
   <div>
-    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Login</button>
+    <button mat-button color="primary" [disabled]="loginForm.invalid" type="submit" >Login</button>
   </div>
 </form>

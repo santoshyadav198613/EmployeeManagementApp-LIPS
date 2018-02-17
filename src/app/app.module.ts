@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RoutingModule } from './routing/routing.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { EmployeeModule } from './employee/employee.module';
 
@@ -45,6 +46,7 @@ import { valueProvider, VALUE_CONFIG } from './service/valueprovider/valueprovid
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
     EmployeeModule,
     RoutingModule

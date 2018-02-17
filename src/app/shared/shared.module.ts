@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-import { CustomcurrencyPipe } from '../common/customcurrency.pipe';
-import { SalaryfilterPipe } from '../common/salaryfilter.pipe';
+import { MatButtonModule, MatFormFieldModule } from '@angular/material';
+import { CustomcurrencyPipe,SalaryfilterPipe } from '../common';
 import { HoverDirective } from '../directives/hover.directive';
 import { PasswordValidatorDirective } from '../directives/password-validator.directive';
 @NgModule({
@@ -13,7 +12,9 @@ import { PasswordValidatorDirective } from '../directives/password-validator.dir
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule
   ],
   exports: [
     CommonModule,
@@ -23,8 +24,10 @@ import { PasswordValidatorDirective } from '../directives/password-validator.dir
     CustomcurrencyPipe,
     SalaryfilterPipe,
     HoverDirective,
-    PasswordValidatorDirective
+    PasswordValidatorDirective,
+    MatButtonModule,
+    MatFormFieldModule
   ],
-  declarations: [CustomcurrencyPipe,SalaryfilterPipe,HoverDirective,PasswordValidatorDirective]
+  declarations: [CustomcurrencyPipe, SalaryfilterPipe, HoverDirective, PasswordValidatorDirective]
 })
 export class SharedModule { }
